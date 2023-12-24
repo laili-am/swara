@@ -1,0 +1,20 @@
+.kotak{
+  position: absolute;
+  width: 45%;
+  height:100%;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(180deg, #F3EDFF 0%, #DED1FF 19.79%, #8656FF 100%);
+  }
+
+.error{
+  color: var(--color-danger);
+}
+
+.input{
+  margin-bottom: 24px;
+}
+  
+.link{
+  margin-top: 16px ;
+}

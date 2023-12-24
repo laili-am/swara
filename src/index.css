@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  /*base color  */
+  --color-primary:  #8656FF; 
+  --color-primary-surface: #F3EDFF;
+  --color-primary-hover: #DED1FF;
+  --color-primary-border: #F3EDFF;
+  --color-primary-pressed: rgb(97, 49, 218);
+  --color-primary-focus: rgba(51, 6, 157, 0.2);
+  --color-primary-light: #F3EDFF;
+
+  /* another color */
+  --color-secondary-light: #DED1FF;
+  --color-tertiary: #8656FF;
+  --color-disabled: rgba(0, 0, 0, 0.25);
+  --color-gradient-1: linear-gradient(90deg,  #8656FF 0%, #DED1FF 100%);
+
+
+  /* status color. this is default from ant design*/
+  --color-success: #52c41a;
+  --color-danger: #f5222d;
+  --color-warning: #faad14;
+  --color-info: #1890ff;
+  /* Neutral color */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray-10: #f8f9fa;
+  --color-gray-20: #e9ecef;
+  --color-gray-30: #dee2e6;
+  --color-gray-40: #ced4da;
+  --color-gray-50: #adb5bd;
+  --color-gray-60: #6c757d;
+  --color-gray-70: #495057;
+  --color-gray-80: #343a40;
+  --color-gray-90: #212529;
+  /* Typography color. this is default from ant design */
+  --color-heading: rgba(0, 0, 0, 0.85);
+  --color-text: rgba(0, 0, 0, 0.65);
+  --color-text-secondary: rgba(0, 0, 0, 0.45);
+  --color-text-disabled: rgba(0, 0, 0, 0.25);
+  --color-text-placeholder: rgba(0, 0, 0, 0.25);
+  --color-text-link: #5c31ca;
+  --color-text-link-hover: #5c31ca;
+  --color-text-link-active: #5c31ca;
+  --color-text-link-disabled: rgba(0, 0, 0, 0.25);
+
+  /* color border */
+  --color-border: rgba(0, 0, 0, 0.25);
+  /* Typography */
+  /* heading 1 */
+  --font-h1-size: 48px;
+  --font-h1-weight: 700;
+  --font-h1-lh: 72px;
+  --font-h1-ls: -0.022em;
+  /* heading 2 */
+  --font-h2-size: 36px;
+  --font-h2-weight: 700;
+  --font-h2-lh: 54px;
+  --font-h2-ls: -0.022em;
+  /* heading 3 */
+  --font-h3-size: 28px;
+  --font-h3-weight: 700;
+  --font-h3-weight-sb: 600;
+  --font-h3-lh: 42px;
+  --font-h3-ls: -0.021em;
+  /* heading 4 */
+  --font-h4-size: 20px;
+  --font-h4-weight: 700;
+  --font-h4-weight-sb: 600;
+  --font-h4-lh: 30px;
+  --font-h4-ls: -0.017em;
+  /* heading 5 */
+  --font-h5-size: 16px;
+  --font-h5-weight: 700;
+  --font-h5-weight-sb: 600;
+  --font-h5-lh: 24px;
+
+  /* body 1 */
+  --font-body-1-size: 16px;
+  --font-body-1-weight: 400;
+  --font-body-1-weight-m: 500;
+  --font-body-1-lh: 24px;
+  --font-body-1-ls: -0.011em;
+  /* body 2 */
+  --font-body-2-size: 14px;
+  --font-body-2-weight: 400;
+  --font-body-2-weight-m: 500;
+  --font-body-2-lh: 20px;
+  --font-body-2-ls: -0.006em;
+  /* body 3 */
+  --font-body-3-size: 12px;
+  --font-body-3-weight: 400;
+  --font-body-3-weight-m: 500;
+  --font-body-3-lh: 16px;
+
+  /* Spacing */
+  --space-s: 4px;
+  --space-m: 8px;
+  --space-l: 16px;
+  --space-xl: 24px;
+  --space-xxl: 48px;
+
+  /* Icon */
+  --icon-xs: 16px;
+  --icon-s: 24px;
+  --icon-m: 32px;
+  --icon-l: 48px;
+  --icon-xl: 64px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: var(--font-h1-size);
+  font-weight: var(--font-h1-weight);
+  line-height: var(--font-h1-lh);
+  letter-spacing: var(--font-h1-ls);
+  color: var(--color-heading);
+}
+h2 {
+  font-size: var(--font-h2-size);
+  font-weight: var(--font-h2-weight);
+  line-height: var(--font-h2-lh);
+  letter-spacing: var(--font-h2-ls);
+  color: var(--color-heading);
+}
+h3 {
+  font-size: var(--font-h3-size);
+  font-weight: var(--font-h3-weight);
+  line-height: var(--font-h3-lh);
+  letter-spacing: var(--font-h3-ls);
+  color: var(--color-heading);
+}
+h4 {
+  font-size: var(--font-h4-size);
+  font-weight: var(--font-h4-weight);
+  line-height: var(--font-h4-lh);
+  letter-spacing: var(--font-h4-ls);
+  color: var(--color-heading);
+}
+h5 {
+  font-size: var(--font-h5-size);
+  font-weight: var(--font-h5-weight);
+  line-height: var(--font-h5-lh);
+  color: var(--color-heading);
+}
+
+.h3-sb {
+  font-size: var(--font-h3-size);
+  font-weight: var(--font-h3-weight-sb);
+  line-height: var(--font-h3-lh);
+  letter-spacing: var(--font-h3-ls);
+  color: var(--color-heading);
+}
+
+.h4-sb {
+  font-size: var(--font-h4-size);
+  font-weight: var(--font-h4-weight-sb);
+  line-height: var(--font-h4-lh);
+  letter-spacing: var(--font-h4-ls);
+  color: var(--color-heading);
+}
+
+.h5-sb {
+  font-size: var(--font-h5-size);
+  font-weight: var(--font-h5-weight-sb);
+  line-height: var(--font-h5-lh);
+  letter-spacing: var(--font-h5-ls);
+  color: var(--color-heading);
+}
+
+p {
+  font-size: var(--font-body-2-size);
+  font-weight: var(--font-body-2-weight);
+  line-height: var(--font-body-2-lh);
+  letter-spacing: var(--font-body-2-ls);
+  color: var(--color-text);
+}
+
+.body1 {
+  font-size: var(--font-body-1-size);
+  font-weight: var(--font-body-1-weight);
+  line-height: var(--font-body-1-lh);
+  letter-spacing: var(--font-body-1-ls);
+}
+.body1-m {
+  font-size: var(--font-body-1-size);
+  font-weight: var(--font-body-1-weight-m);
+  line-height: var(--font-body-1-lh);
+  letter-spacing: var(--font-body-1-ls);
+}
+
+.body2 {
+  font-size: var(--font-body-2-size);
+  font-weight: var(--font-body-2-weight);
+  line-height: var(--font-body-2-lh);
+  letter-spacing: var(--font-body-2-ls);
+}
+.body2-m {
+  font-size: var(--font-body-2-size);
+  font-weight: var(--font-body-2-weight-m);
+  line-height: var(--font-body-2-lh);
+  letter-spacing: var(--font-body-2-ls);
+}
+.body3 {
+  font-size: var(--font-body-3-size);
+  font-weight: var(--font-body-3-weight);
+  line-height: var(--font-body-3-lh);
+  letter-spacing: var(--font-body-3-ls);
+}
+.body3-m {
+  font-size: var(--font-body-3-size);
+  font-weight: var(--font-body-3-weight-m);
+  line-height: var(--font-body-3-lh);
+  letter-spacing: var(--font-body-3-ls);
+}
+
+/* Global class for custom input */
+.input {
+  padding: 8px 16px;
+  border: 1px solid var(--color-disabled);
+  border-radius: 8px;
+}
+.input:hover {
+  border: 1px solid var(--color-primary-hover);
+}
+.input:focus {
+  border: 1px solid var(--color-primary-pressed);
+  box-shadow: 0px 0px 6px var(--color-pressed);
+}
+.disabled {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+/* global layout for padding */
+.layout {
+  padding: 0;
+}
+.layout-padding {
+  padding-inline:0 px;
+}
+@media screen and (max-width: 576px) {
+  .layout-padding {
+    padding: var(--space-l);
+  }
+}
+.layout-admin {
+  padding: 40px 48px 0;
+  background: var(--color-white);
+}
+@media screen and (max-width: 1000px) {
+  .layout-admin {
+    padding: 24px 24px 0;
+  }
+}
+.layout-main-admin {
+  background-color: var(--color-primary-surface);
+  border-radius: 40px 0 0 0;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.capitalize {
+  text-transform: lowercase;
+}
+.capitalize::first-letter {
+  text-transform: capitalize;
+}

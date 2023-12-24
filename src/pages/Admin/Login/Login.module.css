@@ -1,0 +1,26 @@
+.background {
+    background: linear-gradient(180deg, #F3EDFF 0%, #DED1FF 19.79%, #8656FF 100%);
+    width:100vw;
+    min-height: 100vh;
+}
+  
+.container {
+    background:var(--color-white);
+    box-shadow: 8px 8px 16px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 48px 24px 48px ;
+}
+
+.input{
+    width: 300px;
+    margin-bottom: 8px;
+}
+
+.text{
+  color: var(--color-black); 
+  font-size: var(--font-h5-size);
+}

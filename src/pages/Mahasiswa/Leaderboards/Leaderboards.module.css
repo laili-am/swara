@@ -1,0 +1,15 @@
+.background{
+    background: var(--color-primary-surface);
+    margin-bottom: 16px;
+    border-radius: 5px;
+}
+
+.img{
+    height: 48px;
+    margin: 8px 16px 8px 16px;
+}
+
+.text{
+    line-height: 64px;
+    vertical-align: middle;
+}

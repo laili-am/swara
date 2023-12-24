@@ -1,0 +1,70 @@
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-m);
+    border-radius: 4px;
+    border: 0px !important;
+    /* font-weight: var(--font-h3-weight); */
+    padding: var(--space-m) var(--space-l);
+  }
+  
+  /* primary group */
+  .primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+  }
+  .primary:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-white);
+  }
+  .primary:active {
+    background-color: var(--color-primary-pressed);
+    color: var(--color-white);
+  }
+  .primary:focus {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 3px solid rgba(6, 145, 157, 0.2);
+  }
+  
+  /* secondary */
+  .secondary {
+    background-color: transparent;
+    color: var(--color-primary) !important;
+    border: 2px solid var(--color-primary) !important;
+  }
+  .secondary:hover {
+    background-color: var(--color-primary-light) !important;
+    border: 2px solid var(--color-primary-hover) !important;
+    color: var(--color-primary-hover) !important;
+  }
+  .secondary:active {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary-pressed);
+  }
+  .secondary:focus {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary-focus);
+  }
+  
+  /* disabled */
+  .primaryDisabled,
+  .primaryDisabled:hover,
+  .primaryDisabled:active,
+  .primaryDisabled:focus {
+    background-color: var(--color-disabled) !important;
+    color: var(--color-white) !important;
+  }
+  
+  .secondaryDisabled,
+  .secondaryDisabled:hover,
+  .secondaryDisabled:active,
+  .secondaryDisabled:focus {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--color-disabled) !important;
+    border: 2px solid var(--color-disabled) !important;
+  }
+  

@@ -1,0 +1,44 @@
+.nav {
+    display: flex;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-l);
+    font-size: 16px;
+    color: var(--color-black);
+    font-weight: 600;
+    width: 100%;
+    padding: 8px 16px;
+  }
+  
+  .active {
+    background: var(--color-primary-surface);
+    border-radius: 100px 0 0 100px;
+  }
+ 
+  .menu:hover {
+    color: var(--color-bl);
+  }
+  .pt {
+    padding-top: 16px;
+    border: 1px solid #000;
+  }
+  .image {
+    width: 90%;
+    margin: 40px 32px 16px;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .textMenu {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .image {
+      width: 100%;
+    }
+  }
+  

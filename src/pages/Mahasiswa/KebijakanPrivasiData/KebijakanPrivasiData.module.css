@@ -1,0 +1,15 @@
+.title{
+    display:flex;
+    justify-content:center;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    color: var(--color-primary);
+}
+
+.tekskebijakan{
+    color: var(--color-primary);
+}
+
+.Kebijakan{
+    background: linear-gradient(180deg, #F3EDFF 0%, rgba(243, 237, 255, 0) 100%);
+}

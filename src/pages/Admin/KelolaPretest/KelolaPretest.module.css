@@ -1,0 +1,13 @@
+.btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-m);
+    width: 24px;
+    height: 24x;
+    border-radius: 16px;
+    border: 0px !important;
+    padding: var(--space-m) var(--space-l); 
+  }
+

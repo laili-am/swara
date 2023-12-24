@@ -1,0 +1,14 @@
+.body1{
+    color: var(--color-black);
+    margin-top: 8px;
+}
+
+.input{
+    margin-bottom: 0px;
+}
+
+.inputmedia{
+    width: 80%;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}

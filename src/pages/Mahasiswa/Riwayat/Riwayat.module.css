@@ -1,0 +1,10 @@
+.background{
+    background: var(--color-white);
+    border-radius: 5px;
+    border: 2px solid var(--color-primary);
+    margin-bottom: 16px;
+}
+
+.konten{
+    margin: 8px 0px;
+}

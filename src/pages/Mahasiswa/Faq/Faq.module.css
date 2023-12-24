@@ -1,0 +1,15 @@
+.title{
+    display:flex;
+    justify-content:center;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    color: var(--color-primary);
+}
+
+.panel{
+    background: var(--color-primary) ;
+} 
+
+.panel :global(.anticon){
+    color:var(--color-white);
+}
