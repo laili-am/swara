@@ -2,7 +2,8 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 const app = express();
-const port = 8080;
+// const port = 8080;
+const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 
@@ -190,6 +191,7 @@ app.post("/miniquiz/generate/score", (req, res) => {
   generateScore();
 });
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", function () {
   console.log(`Example app listening on port ${port}`);
 });
+// app.listen(port, () => {});
