@@ -1,12 +1,13 @@
-import { Row, Col, Input, Radio, Space } from "antd";
+import { Radio, Space } from "antd";
 import LayoutMahasiswa from "../../../layouts/Mahasiswa";
 import style from "./Posttest.module.css";
-import { useQuery, useMutation } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { GETsoalPosttest } from "../../../graphql/query";
 import { CustomButton } from "../../../components";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { ModalScore } from "../../../components";
 
 const axiosInstance = axios.create({
   headers: {
@@ -17,6 +18,8 @@ const axiosInstance = axios.create({
 });
 
 function Posttest() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [score, setScore] = useState(0);
   const { loading, error, data } = useQuery(GETsoalPosttest);
 
   const [dataPosttest, setDataPosttest] = useState([]);
@@ -53,7 +56,8 @@ function Posttest() {
         }
       );
       setChangeAnswerLoading(false);
-
+      setIsModalOpen(true);
+      setScore(score.data.posttest_score);
       setDataPosttest([]);
     } else {
       alert("Data masih ada yang kosong");
@@ -62,6 +66,11 @@ function Posttest() {
 
   return (
     <>
+      <ModalScore
+        isOpen={isModalOpen}
+        setIsOpen={setIsModalOpen}
+        score={score}
+      />
       <LayoutMahasiswa>
         <div className={style.layout}>
           <h2

@@ -1,17 +1,13 @@
-import { Row, Col, Input, Radio, Space } from "antd";
+import { Radio, Space } from "antd";
 import LayoutMahasiswa from "../../../layouts/Mahasiswa";
 import style from "./Pretest.module.css";
 import { useQuery, useMutation } from "@apollo/client";
 import { GETsoalPretest } from "../../../graphql/query";
-import { CustomButton } from "../../../components";
-import {
-  INSERTjawabanPretest,
-  ADDjoinmahasiswamateri,
-} from "../../../graphql/mutation";
+import { CustomButton, ModalScore } from "../../../components";
+import { ADDjoinmahasiswamateri } from "../../../graphql/mutation";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
-import { useRoutes, useNavigate } from "react-router-dom";
 
 const axiosInstance = axios.create({
   headers: {
@@ -22,7 +18,8 @@ const axiosInstance = axios.create({
 });
 
 function Pretest() {
-  const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [score, setScore] = useState(0);
   const { loading, error, data } = useQuery(GETsoalPretest);
   const [addMateri] = useMutation(ADDjoinmahasiswamateri);
 
@@ -53,9 +50,12 @@ function Pretest() {
   const handleSubmit = async (e) => {
     if (dataPretest.length === data.soal_pretest.length) {
       setChangeAnswerLoading(true);
-      await axiosInstance.post("http://localhost:8080/pretest/generate/score", {
-        idMahasiswa: idUser,
-      });
+      const score = await axiosInstance.post(
+        "http://localhost:8080/pretest/generate/score",
+        {
+          idMahasiswa: idUser,
+        }
+      );
       addMateri({
         variables: {
           id_mahasiswa: idUser,
@@ -63,9 +63,9 @@ function Pretest() {
         },
       });
       setChangeAnswerLoading(false);
-
+      setIsModalOpen(true);
+      setScore(score.data.pretest_score);
       setDataPretest([]);
-      navigate("/Pembelajaran");
     } else {
       alert("Data masih ada yang kosong");
     }
@@ -73,6 +73,12 @@ function Pretest() {
 
   return (
     <>
+      <ModalScore
+        isOpen={isModalOpen}
+        setIsOpen={setIsModalOpen}
+        score={score}
+      />
+
       <LayoutMahasiswa>
         <div className={style.layout}>
           <h2

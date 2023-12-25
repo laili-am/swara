@@ -21,7 +21,7 @@ function Leaderboards() {
         <Row justify='center'>
           {data?.mahasiswa.map((item) => {
             const score = item.total_score
-              ? Math.round((item.total_score / totalSoal) * 100)
+              ? Math.round(item.total_score * 35)
               : 0;
             return (
               <>
