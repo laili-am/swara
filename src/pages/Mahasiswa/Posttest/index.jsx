@@ -59,7 +59,6 @@ function Posttest() {
   };
 
   const handleSubmit = async (e) => {
-    console.log("dataPosttest: ", dataPosttest)
     if (dataPosttest.length === data.soal_posttest.length) {
       setChangeAnswerLoading(true);
       const score = await axiosInstance.post(
