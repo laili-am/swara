@@ -9,6 +9,8 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
 
+const isDev = process.env.NODE_ENV === "development";
+
 const axiosInstance = axios.create({
   headers: {
     "content-type": "application/json",
@@ -32,11 +34,16 @@ function Pretest() {
     const idSoal = item.id_soal_pretest;
     const jawaban = e.target.value;
     setChangeAnswerLoading(true);
-    await axiosInstance.post("http://localhost:8080/pretest/answer", {
-      idSoal,
-      idMahasiswa: idUser,
-      answer: jawaban,
-    });
+    await axiosInstance.post(
+      isDev
+        ? "http://localhost:8080/pretest/answer"
+        : "https://swara-production.up.railway.app/pretest/answer",
+      {
+        idSoal,
+        idMahasiswa: idUser,
+        answer: jawaban,
+      }
+    );
     setChangeAnswerLoading(false);
     setDataPretest([
       ...dataPretest,
@@ -51,7 +58,9 @@ function Pretest() {
     if (dataPretest.length === data.soal_pretest.length) {
       setChangeAnswerLoading(true);
       const score = await axiosInstance.post(
-        "http://localhost:8080/pretest/generate/score",
+        isDev
+          ? "http://localhost:8080/pretest/generate/score"
+          : "https://swara-production.up.railway.app/pretest/generate/score",
         {
           idMahasiswa: idUser,
         }
@@ -78,7 +87,6 @@ function Pretest() {
         setIsOpen={setIsModalOpen}
         score={score}
       />
-
       <LayoutMahasiswa>
         <div className={style.layout}>
           <h2

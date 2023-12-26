@@ -137,7 +137,6 @@ function TambahMateri() {
               type='file'
               name='media_gambar'
               ref={image}
-              value={data.media_gambar}
               onChange={handleFileUpload}
               className={style.inputmedia}
             />
@@ -151,7 +150,6 @@ function TambahMateri() {
               type='file'
               name='media_video'
               ref={video}
-              value={data.media_video}
               onChange={handleFileUploadVideo}
               className={style.inputmedia}
             />

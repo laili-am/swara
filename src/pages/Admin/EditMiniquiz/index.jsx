@@ -204,48 +204,7 @@ function EditMiniquiz() {
               onChange={onChange}
             />
           </Form.Item>
-          {/* <p>Soal Miniquiz</p>
-          <CustomInput
-            type='text'
-            name='soal_miniquiz'
-            value={data.soal_miniquiz}
-            onChange={onChange}
-          />
-          <p>Pilihan A</p>
-          <CustomInput
-            type='text'
-            name='pilihan_a_miniquiz'
-            value={data.pilihan_a_miniquiz}
-            onChange={onChange}
-          />
-          <p>Pilihan B</p>
-          <CustomInput
-            type='text'
-            name='pilihan_b_miniquiz'
-            value={data.pilihan_b_miniquiz}
-            onChange={onChange}
-          />
-          <p>Pilihan C</p>
-          <CustomInput
-            type='text'
-            name='pilihan_c_miniquiz'
-            value={data.pilihan_c_miniquiz}
-            onChange={onChange}
-          />
-          <p>Pilihan D</p>
-          <CustomInput
-            type='text'
-            name='pilihan_d_miniquiz'
-            value={data.pilihan_d_miniquiz}
-            onChange={onChange}
-          />
-          <p>Jawaban Benar</p>
-          <CustomInput
-            type='text'
-            name='jawaban_benar_miniquiz'
-            value={data.jawaban_benar_miniquiz}
-            onChange={onChange}
-          /> */}
+
           <CustomButton
             variant='secondary'
             onClick={handleSubmit}

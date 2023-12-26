@@ -9,6 +9,11 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { ModalScore } from "../../../components";
 
+const isDev = process.env.NODE_ENV === "development";
+// coba dong di liat console log nya apa?
+// lu bisa coba ganti sendiri kyk gitu? yg ada await axios nya, tambahin kyk line 42 dst. tapi jangan lupa yg sama cuma basic urlnya, endpointnya beda2. paham gk?
+// insyaAllah yaa berarti kayak line 65 juga dsb, yup, sama juga di quiz lainnya.... gw sekalian benerin yg edit tadi ok baiqlllllh
+
 const axiosInstance = axios.create({
   headers: {
     "content-type": "application/json",
@@ -16,6 +21,8 @@ const axiosInstance = axios.create({
       "qwwJa5iNIZeyRdOeNCNJTDtXj8vWmg3nvb7vDf6bKY2RCrP1YaKcl1Aejo1A5h3x",
   },
 });
+
+//ngebenerinnya gimana?
 
 function Posttest() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,11 +38,16 @@ function Posttest() {
     const idSoal = item.id_soal_posttest;
     const jawaban = e.target.value;
     setChangeAnswerLoading(true);
-    await axiosInstance.post("http://localhost:8080/posttest/answer", {
-      idSoal,
-      idMahasiswa: idUser,
-      answer: jawaban,
-    });
+    await axiosInstance.post(
+      isDev
+        ? "http://localhost:8080/posttest/answer"
+        : "https://swara-production.up.railway.app/posttest/answer",
+      {
+        idSoal,
+        idMahasiswa: idUser,
+        answer: jawaban,
+      }
+    );
     setChangeAnswerLoading(false);
     setDataPosttest([
       ...dataPosttest,
@@ -50,7 +62,9 @@ function Posttest() {
     if (dataPosttest.length === data.soal_posttest.length) {
       setChangeAnswerLoading(true);
       await axiosInstance.post(
-        "http://localhost:8080/posttest/generate/score",
+        isDev
+          ? "http://localhost:8080/posttest/generate/score"
+          : "https://swara-production.up.railway.app/posttest/generate/score",
         {
           idMahasiswa: idUser,
         }
