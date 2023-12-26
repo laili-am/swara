@@ -59,9 +59,10 @@ function Posttest() {
   };
 
   const handleSubmit = async (e) => {
+    console.log("dataPosttest: ", dataPosttest)
     if (dataPosttest.length === data.soal_posttest.length) {
       setChangeAnswerLoading(true);
-      await axiosInstance.post(
+      const score = await axiosInstance.post(
         isDev
           ? "http://localhost:8080/posttest/generate/score"
           : "https://swara-production.up.railway.app/posttest/generate/score",
