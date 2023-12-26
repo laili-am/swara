@@ -26,9 +26,7 @@ function Riwayat() {
               <Col offset={19} span={1}>
                 <h5 className={style.text}>
                   {data?.mahasiswa_by_pk.pretest_score !== null
-                    ? Math.floor(
-                        (data?.mahasiswa_by_pk.pretest_score / 15) * 100
-                      )
+                    ? data?.mahasiswa_by_pk.pretest_score
                     : 0}
                 </h5>
               </Col>
@@ -45,9 +43,7 @@ function Riwayat() {
                 <Col offset={19} span={1}>
                   <h5 className={style.text}>
                     {data?.mahasiswa_by_pk.posttest_score !== null
-                      ? Math.floor(
-                          (data?.mahasiswa_by_pk.posttest_score / 20) * 100
-                        )
+                      ? data?.mahasiswa_by_pk.posttest_score
                       : 0}
                   </h5>
                 </Col>
