@@ -29,10 +29,14 @@ function Materi() {
             <h2>{data?.materi_by_pk.judul_materi}</h2>
           </Row>
           <Row justify='center'>
-            <img
-              src={data?.materi_by_pk.media_gambar}
-              className={style.gambar}
-            />
+            {data?.materi_by_pk.media_gambar !== null ? (
+              <img
+                src={data?.materi_by_pk.media_gambar}
+                className={style.gambar}
+              />
+            ) : (
+              <></>
+            )}
           </Row>
           <Row justify='center'>
             <Col lg={{ span: 18 }} md={{ span: 18 }} xs={{ span: 20 }}>
