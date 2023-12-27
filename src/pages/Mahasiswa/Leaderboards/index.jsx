@@ -20,9 +20,6 @@ function Leaderboards() {
         <h2 style={{ textAlign: "center" }}>Leaderboards</h2>
         <Row justify='center'>
           {data?.mahasiswa.map((item) => {
-            const score = item.total_score
-              ? Math.round(item.total_score * 35)
-              : 0;
             return (
               <>
                 <Col key={item.nama} span={16} className={style.background}>
@@ -42,7 +39,7 @@ function Leaderboards() {
                       <h5 className={style.text}>{item.nama}</h5>
                     </Col>
                     <Col span={2}>
-                      <h5 className={style.text}>{score}</h5>
+                      <h5 className={style.text}>{item.total_score}</h5>
                     </Col>
                   </Row>
                 </Col>
