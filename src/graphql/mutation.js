@@ -292,6 +292,43 @@ export const DELETEposttesturl = gql`
     }
   }
 `;
+// 
+export const DELETEmahasiswamateribyidmahasiswa = gql`
+  mutation MyMutation1($id_mahasiswa:Int!) {
+    delete_mahasiswa_materi(where: {id_mahasiswa: {_eq: $id_mahasiswa}}) {
+      returning {
+        id
+      }
+    }
+  }
+`
+export const DELETEpretestbyidmahasiswa = gql`
+  mutation MyMutation2($id_mahasiswa:Int!) {
+    delete_pretest(where: {id_mahasiswa: {_eq: $id_mahasiswa}}) {
+      returning {
+        is_submited
+      }
+    }
+  }
+`
+export const DELETEminiquizbyidmahasiswa = gql`
+  mutation MyMutation3($id_mahasiswa:Int!) {
+    delete_miniquiz(where: {id_mahasiswa: {_eq: $id_mahasiswa}}) {
+      returning {
+        is_submited
+      }
+    }
+  }
+`
+export const DELETEposttestbyidmahasiswa = gql`
+  mutation MyMutation4($id_mahasiswa:Int!) {
+    delete_posttest(where: {id_mahasiswa: {_eq: $id_mahasiswa}}) {
+      returning {
+        is_submited
+      }
+    }
+  }
+`
 
 // UPDATE //
 

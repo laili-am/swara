@@ -1,7 +1,7 @@
 import LayoutAdmin from "../../../layouts/Admin";
 import { useQuery, useMutation } from "@apollo/client";
 import { GETuser } from "../../../graphql/query";
-import { DELETEuser } from "../../../graphql/mutation";
+import { DELETEmahasiswamateribyidmahasiswa, DELETEminiquizbyidmahasiswa, DELETEposttestbyidmahasiswa, DELETEpretestbyidmahasiswa, DELETEuser } from "../../../graphql/mutation";
 import { Row, Col, Button } from "antd";
 import { DeleteFilled } from "@ant-design/icons";
 import style from "./KelolaUser.module.css";
@@ -12,8 +12,40 @@ function KelolaUser() {
   const [deleteUser, { loading: loadingDeleteUser }] = useMutation(DELETEuser, {
     refetchQueries: [GETuser],
   });
+  const [deleteMahasiswaMateri, { loading: loadingDeleteMahasiswaMateri }] = useMutation(DELETEmahasiswamateribyidmahasiswa, {
+    refetchQueries: [GETuser],
+  });
+  const [deletePretest, { loading: loadingDeletePretest }] = useMutation(DELETEpretestbyidmahasiswa, {
+    refetchQueries: [GETuser],
+  });
+  const [deleteMiniquiz, { loading: loadingDeleteMiniquiz }] = useMutation(DELETEminiquizbyidmahasiswa, {
+    refetchQueries: [GETuser],
+  });
+  const [deletePosttest, { loading: loadingDeletePosttest }] = useMutation(DELETEposttestbyidmahasiswa, {
+    refetchQueries: [GETuser],
+  });
 
   const handleDelete = (id_mahasiswa) => {
+    deleteMahasiswaMateri({
+      variables: {
+        id_mahasiswa: id_mahasiswa,
+      },
+    });
+    deletePretest({
+      variables: {
+        id_mahasiswa: id_mahasiswa,
+      },
+    });
+    deleteMiniquiz({
+      variables: {
+        id_mahasiswa: id_mahasiswa,
+      },
+    });
+    deletePosttest({
+      variables: {
+        id_mahasiswa: id_mahasiswa,
+      },
+    });
     deleteUser({
       variables: {
         id_mahasiswa: id_mahasiswa,
