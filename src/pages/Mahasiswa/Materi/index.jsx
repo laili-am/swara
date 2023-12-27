@@ -29,7 +29,7 @@ function Materi() {
             <h2>{data?.materi_by_pk.judul_materi}</h2>
           </Row>
           <Row justify='center'>
-            {data?.materi_by_pk.media_video !== null ? (
+            {data?.materi_by_pk.media_gambar !== null ? (
               <img
                 src={data?.materi_by_pk.media_gambar}
                 className={style.gambar}
