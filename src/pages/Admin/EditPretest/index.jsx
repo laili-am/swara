@@ -46,7 +46,7 @@ function EditPretest() {
     });
   };
   const [updateSoalPretest] = useMutation(EDITpretest, {
-    refetchQueries: [GETpretest],
+    refetchQueries: [GETsoalPretestbyId],
   });
   const editSoalPretest = (newSoal) => {
     updateSoalPretest({
