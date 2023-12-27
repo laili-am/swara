@@ -10,25 +10,23 @@ import {
 import { useQuery, useLazyQuery } from "@apollo/client";
 import style from "./Pembelajaran.module.css";
 import Cookies from "js-cookie";
-import { useEffect } from "react";
 
 function Pembelajaran() {
   const idMahasiswa = JSON.parse(Cookies.get("user")).id;
   const { data: allMateriForAMahasiswaId, refetch } = useQuery(ALLmateribymahasiswaID, {
     variables: { id_mahasiswa: idMahasiswa },
+    fetchPolicy: "cache-and-network",
   });
   const allMateri = allMateriForAMahasiswaId?.mahasiswa_materi;
   const navigate = useNavigate();
   const { data: pretestIsSubmited } = useQuery(GETPretestIsSubmited, {
     variables: { id_mahasiswa: idMahasiswa },
+    fetchPolicy: "cache-and-network",
   });
   const { data: posttestIsSubmited } = useQuery(GETPosttestIsSubmited, {
     variables: { id_mahasiswa: idMahasiswa },
+    fetchPolicy: "cache-and-network",
   });
-
-  useEffect(() => {
-    refetch();
-  }, []);
 
   return (
     <>

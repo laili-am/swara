@@ -9,9 +9,7 @@ const ModalScore = ({ isOpen, setIsOpen, score }) => {
 
   const handleCancel = () => {
     setIsOpen(false);
-    // navigate("/Pembelajaran");
-    window.location = "/Pembelajaran"
-    console.log("baru")
+    navigate("/Pembelajaran");
   };
 
   return (
@@ -29,7 +27,7 @@ const ModalScore = ({ isOpen, setIsOpen, score }) => {
             </CustomButton>
             <CustomButton
               variant={"secondary"}
-              onClick={() => window.location = "/Pembelajaran"}>
+              onClick={() => navigate("/Pembelajaran")}>
               Selesai
             </CustomButton>
           </Row>,
