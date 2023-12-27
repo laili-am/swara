@@ -49,8 +49,9 @@ function Posttest() {
       }
     );
     setChangeAnswerLoading(false);
+    const newData = dataPosttest.filter((e)=>(e.id_soal_posttest !== idSoal))
     setDataPosttest([
-      ...dataPosttest,
+      ...newData,
       {
         jawaban_posttest: jawaban,
         id_soal_posttest: idSoal,
@@ -59,6 +60,7 @@ function Posttest() {
   };
 
   const handleSubmit = async (e) => {
+    console.log("dataPosttest.length, data.soal_posttest.length: ", dataPosttest.length, data.soal_posttest.length)
     if (dataPosttest.length === data.soal_posttest.length) {
       setChangeAnswerLoading(true);
       const score = await axiosInstance.post(

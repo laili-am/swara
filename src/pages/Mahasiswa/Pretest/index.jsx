@@ -45,8 +45,9 @@ function Pretest() {
       }
     );
     setChangeAnswerLoading(false);
+    const newData = dataPretest.filter((e)=>(e.id_soal_pretest !== idSoal))
     setDataPretest([
-      ...dataPretest,
+      ...newData,
       {
         jawaban_pretest: jawaban,
         id_soal_pretest: idSoal,

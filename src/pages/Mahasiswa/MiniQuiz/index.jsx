@@ -55,8 +55,9 @@ function MiniQuiz() {
       }
     );
     setChangeAnswerLoading(false);
+    const newData = dataMiniquiz.filter((e)=>(e.id_soal_miniquiz !== idSoal))
     setDataMiniquiz([
-      ...dataMiniquiz,
+      ...newData,
       {
         jawaban_miniquiz: jawaban,
         id_soal_miniquiz: idSoal,
