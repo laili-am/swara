@@ -46,7 +46,7 @@ function EditPosttest() {
     });
   };
   const [updateSoalPosttest] = useMutation(EDITposttest, {
-    refetchQueries: [GETposttest],
+    refetchQueries: [GETsoalPosttestbyId],
   });
   const editSoalPosttest = (newSoal) => {
     updateSoalPosttest({

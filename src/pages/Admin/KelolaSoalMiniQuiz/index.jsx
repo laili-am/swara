@@ -12,6 +12,7 @@ function KelolaSoalMiniQuiz() {
   const { id_materi } = useParams();
   const { loading, error, data } = useQuery(GETminiquiz, {
     variables: { id_materi },
+    fetchPolicy: "cache-and-network",
   });
   const navigate = useNavigate();
 

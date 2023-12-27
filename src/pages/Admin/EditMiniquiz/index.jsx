@@ -48,7 +48,7 @@ function EditMiniquiz() {
     });
   };
   const [updateSoalMiniquiz] = useMutation(EDITminiquiz, {
-    refetchQueries: [GETminiquiz],
+    refetchQueries: [GETsoalMiniquizbyId],
   });
   const editSoalMiniquiz = (newSoal) => {
     updateSoalMiniquiz({

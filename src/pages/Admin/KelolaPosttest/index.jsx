@@ -12,7 +12,9 @@ import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 function KelolaPosttest() {
-  const { loading, error, data } = useQuery(GETposttest);
+  const { loading, error, data } = useQuery(GETposttest, {
+    fetchPolicy: "cache-and-network"
+  });
 
   const navigate = useNavigate();
   const [deletePosttest] = useMutation(DELETEposttest, {

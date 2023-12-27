@@ -9,7 +9,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { DELETEminiquiz } from "../../../graphql/mutation";
 
 function KelolaMiniquiz() {
-  const { loading, error, data } = useQuery(GETmateri);
+  const { loading, error, data } = useQuery(GETmateri, {
+    fetchPolicy: "cache-and-network"
+  });
   console.log(data);
   const navigate = useNavigate();
 
