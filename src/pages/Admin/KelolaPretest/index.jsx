@@ -9,7 +9,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { DELETEpretest } from "../../../graphql/mutation";
 
 function KelolaPretest() {
-  const { loading, error, data } = useQuery(GETpretest);
+  const { loading, error, data } = useQuery(GETpretest, {
+    fetchPolicy: "cache-and-network"
+  });
   const navigate = useNavigate();
 
   const [deletePretest] = useMutation(DELETEpretest, {
